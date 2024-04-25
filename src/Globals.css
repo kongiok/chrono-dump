@@ -1,0 +1,16 @@
+:root {
+  --color-primary: #3D3D3D;
+  --color-primary-bg: #f9f9f9;
+  --color-secondary: #f9f9f9;
+  --color-secondary-bg: #f9f9f9;
+  --color-tertiary: #f9f9f9;
+  --color-tertiary-bg: #f9f9f9;
+  --color-neutral: #3D3D3D;
+  --color-neutral-bg: #f2f2f0;
+  --color-accent: #f9f9f9;
+  --color-accent-bg: #f9f9f9;
+  --color-success: #f9f9f9;
+  --color-success-bg: #f9f9f9;
+  --color-warning: #f9f9f9;
+  --color-warning-bg: #f9f9f9;
+}
