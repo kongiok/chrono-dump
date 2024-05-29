@@ -1,0 +1,60 @@
+html {
+  background-color: var(--color-neutral-bg);
+}
+
+h1 {
+  font-size: 2em;
+  margin: 0.5em 0;
+  font-family: "GenWanMin", serif;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  h1 {
+    margin: 1em 0;
+    text-align: left;
+  }
+}
+
+p {
+  margin: 1.5em 0;
+  font-size: 1em;
+  font-family: "GenSekiGothic", sans-serif;
+  text-align: auto;
+  line-height: 1.5;
+}
+
+a,
+ul,
+li {
+  text-decoration: none;
+  list-style-type: none;
+  color: var(--color-neutral);
+}
+
+em {
+  position: relative;
+  display: inline-block;
+  font-family: "GenSekiGothic", sans-serif;
+  ;
+  font-style: normal;
+  font-weight: 500;
+  border-bottom: 2px dotted var(--color-accent);
+}
+
+pre {
+  background-color: var(--color-neutral-bg);
+}
