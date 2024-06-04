@@ -26,7 +26,7 @@ const Container = styled.footer`
   @media (min-width: 768px) {
   & > span, & > svg {
     margin-top: 1rem;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
 `
 const CopyrightText = styled.span`
