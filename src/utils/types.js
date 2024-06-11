@@ -7,7 +7,6 @@ export const NavItem = PropTypes.shape({
 });
 
 export const TaskView = {
-  KANBAN: "KANBAN",
   CALENDAR: "CALENDAR",
   QUARDRANT: "QUARDRANT",
   INBOX: "INBOX",

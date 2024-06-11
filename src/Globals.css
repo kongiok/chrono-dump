@@ -1,95 +1,97 @@
 :root {
-  --color-primary: #F2A341;
-  --color-primary-bg: #ffffff;
-  --color-secondary: #40293C;
-  --color-secondary-bg: #ffffff;
-  --color-tertiary: #F25F29;
-  --color-tertiary-bg: #ffffff;
-  --color-neutral: #3D3D3D;
-  --color-neutral-bg: #f9f9f9;
-  --color-accent: #BF343F;
-  --color-accent-bg: #ffffff;
-  --color-success: #406A4A;
-  --color-success-bg: #ffffff;
-  --color-warning: #A6411C;
-  --color-warning-bg: #ffffff;
+    --color-primary: #F2A341;
+    --color-primary-bg: #ffffff;
+    --color-secondary: #40293C;
+    --color-secondary-bg: #ffffff;
+    --color-tertiary: #F25F29;
+    --color-tertiary-bg: #ffffff;
+    --color-neutral: #3D3D3D;
+    --color-neutral-bg: #f9f9f9;
+    --color-accent: #BF343F;
+    --color-accent-bg: #ffffff;
+    --color-success: #406A4A;
+    --color-success-bg: #ffffff;
+    --color-warning: #A6411C;
+    --color-warning-bg: #ffffff;
+    --color-error: #A6411C;
+    --color-error-bg: #ffffff;
 }
 
 html {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 /* Fira Code */
 @font-face {
-  font-family: "FiraCode";
-  src: url("/fonts/FiraCode/FiraCode-Regular.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
+    font-family: "FiraCode";
+    src: url("/fonts/FiraCode/FiraCode-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: "FiraCode";
-  src: url("/fonts/FiraCode/FiraCode-Regular.ttf") format("truetype");
-  font-weight: 400;
-  font-style: italic;
+    font-family: "FiraCode";
+    src: url("/fonts/FiraCode/FiraCode-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: italic;
 }
 
 @font-face {
-  font-family: "FiraCode";
-  src: url("/fonts/FiraCode/FiraCode-Medium.ttf") format("truetype");
-  font-weight: 500;
-  font-style: italic;
+    font-family: "FiraCode";
+    src: url("/fonts/FiraCode/FiraCode-Medium.ttf") format("truetype");
+    font-weight: 500;
+    font-style: italic;
 }
 
 @font-face {
-  font-family: "FiraCode";
-  src: url("/fonts/FiraCode/FiraCode-Medium.ttf") format("truetype");
-  font-weight: 500;
-  font-style: normal;
+    font-family: "FiraCode";
+    src: url("/fonts/FiraCode/FiraCode-Medium.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
 }
 
 
 @font-face {
-  font-family: "FiraCode";
-  src: url("/fonts/FiraCode/FiraCode-SemiBold.ttf") format("truetype");
-  font-weight: 600;
-  font-style: italic;
+    font-family: "FiraCode";
+    src: url("/fonts/FiraCode/FiraCode-SemiBold.ttf") format("truetype");
+    font-weight: 600;
+    font-style: italic;
 }
 
 @font-face {
-  font-family: "FiraCode";
-  src: url("/fonts/FiraCode/FiraCode-SemiBold.ttf") format("truetype");
-  font-weight: 600;
-  font-style: normal;
+    font-family: "FiraCode";
+    src: url("/fonts/FiraCode/FiraCode-SemiBold.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: "FiraCode";
-  src: url("/fonts/FiraCode/FiraCode-Bold.ttf") format("truetype");
-  font-weight: 700;
-  font-style: italic;
+    font-family: "FiraCode";
+    src: url("/fonts/FiraCode/FiraCode-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: italic;
 }
 
 @font-face {
-  font-family: "FiraCode";
-  src: url("/fonts/FiraCode/FiraCode-Bold.ttf") format("truetype");
-  font-weight: 700;
-  font-style: normal;
+    font-family: "FiraCode";
+    src: url("/fonts/FiraCode/FiraCode-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: "FiraCode";
-  src: url("/fonts/FiraCode/FiraCode-Light.ttf") format("truetype");
-  font-weight: 300;
-  font-style: italic;
+    font-family: "FiraCode";
+    src: url("/fonts/FiraCode/FiraCode-Light.ttf") format("truetype");
+    font-weight: 300;
+    font-style: italic;
 }
 
 @font-face {
-  font-family: "FiraCode";
-  src: url("/fonts/FiraCode/FiraCode-Light.ttf") format("truetype");
-  font-weight: 300;
-  font-style: normal;
+    font-family: "FiraCode";
+    src: url("/fonts/FiraCode/FiraCode-Light.ttf") format("truetype");
+    font-weight: 300;
+    font-style: normal;
 }
 
 /*
@@ -97,73 +99,73 @@ html {
 */
 
 @font-face {
-  font-family: "GenSekiGothic";
-  src: url("/fonts/GenSekiGothic/GenSekiGothicTW-L.ttf") format("truetype");
-  font-weight: 300;
-  font-style: normal;
+    font-family: "GenSekiGothic";
+    src: url("/fonts/GenSekiGothic/GenSekiGothicTW-L.ttf") format("truetype");
+    font-weight: 300;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: "GenSekiGothic";
-  src: url("/fonts/GenSekiGothic/GenSekiGothicTW-L.ttf") format("truetype");
-  font-weight: 300;
-  font-style: italic;
+    font-family: "GenSekiGothic";
+    src: url("/fonts/GenSekiGothic/GenSekiGothicTW-L.ttf") format("truetype");
+    font-weight: 300;
+    font-style: italic;
 }
 
 @font-face {
-  font-family: "GenSekiGothic";
-  src: url("/fonts/GenSekiGothic/GenSekiGothicTW-R.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
+    font-family: "GenSekiGothic";
+    src: url("/fonts/GenSekiGothic/GenSekiGothicTW-R.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: "GenSekiGothic";
-  src: url("/fonts/GenSekiGothic/GenSekiGothicTW-R.ttf") format("truetype");
-  font-weight: 400;
-  font-style: italic;
+    font-family: "GenSekiGothic";
+    src: url("/fonts/GenSekiGothic/GenSekiGothicTW-R.ttf") format("truetype");
+    font-weight: 400;
+    font-style: italic;
 }
 
 @font-face {
-  font-family: "GenSekiGothic";
-  src: url("/fonts/GenSekiGothic/GenSekiGothicTW-M.ttf") format("truetype");
-  font-weight: 500;
-  font-style: normal;
+    font-family: "GenSekiGothic";
+    src: url("/fonts/GenSekiGothic/GenSekiGothicTW-M.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: "GenSekiGothic";
-  src: url("/fonts/GenSekiGothic/GenSekiGothicTW-M.ttf") format("truetype");
-  font-weight: 500;
-  font-style: italic;
+    font-family: "GenSekiGothic";
+    src: url("/fonts/GenSekiGothic/GenSekiGothicTW-M.ttf") format("truetype");
+    font-weight: 500;
+    font-style: italic;
 }
 
 @font-face {
-  font-family: "GenSekiGothic";
-  src: url("/fonts/GenSekiGothic/GenSekiGothicTW-B.ttf") format("truetype");
-  font-weight: 700;
-  font-style: normal;
+    font-family: "GenSekiGothic";
+    src: url("/fonts/GenSekiGothic/GenSekiGothicTW-B.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: "GenSekiGothic";
-  src: url("/fonts/GenSekiGothic/GenSekiGothicTW-B.ttf") format("truetype");
-  font-weight: 700;
-  font-style: italic;
+    font-family: "GenSekiGothic";
+    src: url("/fonts/GenSekiGothic/GenSekiGothicTW-B.ttf") format("truetype");
+    font-weight: 700;
+    font-style: italic;
 }
 
 @font-face {
-  font-family: "GenSekiGothic";
-  src: url("/fonts/GenSekiGothic/GenSekiGothicTW-H.ttf") format("truetype");
-  font-weight: 900;
-  font-style: normal;
+    font-family: "GenSekiGothic";
+    src: url("/fonts/GenSekiGothic/GenSekiGothicTW-H.ttf") format("truetype");
+    font-weight: 900;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: "GenSekiGothic";
-  src: url("/fonts/GenSekiGothic/GenSekiGothicTW-H.ttf") format("truetype");
-  font-weight: 900;
-  font-style: italic;
+    font-family: "GenSekiGothic";
+    src: url("/fonts/GenSekiGothic/GenSekiGothicTW-H.ttf") format("truetype");
+    font-weight: 900;
+    font-style: italic;
 }
 
 /*
@@ -171,59 +173,59 @@ html {
 */
 
 @font-face {
-  font-family: "GenWanMin";
-  src: url("/fonts/GenWanMin/GenWanMinTW-L.ttf") format("truetype");
-  font-weight: 300;
-  font-style: normal;
+    font-family: "GenWanMin";
+    src: url("/fonts/GenWanMin/GenWanMinTW-L.ttf") format("truetype");
+    font-weight: 300;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: "GenWanMin";
-  src: url("/fonts/GenWanMin/GenWanMinTW-L.ttf") format("truetype");
-  font-weight: 300;
-  font-style: italic;
+    font-family: "GenWanMin";
+    src: url("/fonts/GenWanMin/GenWanMinTW-L.ttf") format("truetype");
+    font-weight: 300;
+    font-style: italic;
 }
 
 @font-face {
-  font-family: "GenWanMin";
-  src: url("/fonts/GenWanMin/GenWanMinTW-R.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
+    font-family: "GenWanMin";
+    src: url("/fonts/GenWanMin/GenWanMinTW-R.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: "GenWanMin";
-  src: url("/fonts/GenWanMin/GenWanMinTW-R.ttf") format("truetype");
-  font-weight: 400;
-  font-style: italic;
+    font-family: "GenWanMin";
+    src: url("/fonts/GenWanMin/GenWanMinTW-R.ttf") format("truetype");
+    font-weight: 400;
+    font-style: italic;
 }
 
 @font-face {
-  font-family: "GenWanMin";
-  src: url("/fonts/GenWanMin/GenWanMinTW-M.ttf") format("truetype");
-  font-weight: 500;
-  font-style: normal;
+    font-family: "GenWanMin";
+    src: url("/fonts/GenWanMin/GenWanMinTW-M.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: "GenWanMin";
-  src: url("/fonts/GenWanMin/GenWanMinTW-M.ttf") format("truetype");
-  font-weight: 500;
-  font-style: italic;
+    font-family: "GenWanMin";
+    src: url("/fonts/GenWanMin/GenWanMinTW-M.ttf") format("truetype");
+    font-weight: 500;
+    font-style: italic;
 }
 
 @font-face {
-  font-family: "GenWanMin";
-  src: url("/fonts/GenWanMin/GenWanMinTW-SB.ttf") format("truetype");
-  font-weight: 700;
-  font-style: normal;
+    font-family: "GenWanMin";
+    src: url("/fonts/GenWanMin/GenWanMinTW-SB.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: "GenWanMin";
-  src: url("/fonts/GenWanMin/GenWanMinTW-SB.ttf") format("truetype");
-  font-weight: 700;
-  font-style: italic;
+    font-family: "GenWanMin";
+    src: url("/fonts/GenWanMin/GenWanMinTW-SB.ttf") format("truetype");
+    font-weight: 700;
+    font-style: italic;
 }
 
 /*
@@ -231,10 +233,10 @@ html {
 */
 
 @font-face {
-  font-family: "Iansui";
-  src: url("/fonts/Iansui/Iansui-Regular.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
+    font-family: "Iansui";
+    src: url("/fonts/Iansui/Iansui-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
 }
 
 /*
@@ -242,51 +244,51 @@ html {
 */
 
 @font-face {
-  font-family: "LXGWWenKai";
-  src: url("/fonts/LXGWWenKai/LXGWWenKaiTC-Bold.ttf") format("truetype");
-  font-weight: 700;
-  font-style: normal;
+    font-family: "LXGWWenKai";
+    src: url("/fonts/LXGWWenKai/LXGWWenKaiTC-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: "LXGWWenKai";
-  src: url("/fonts/LXGWWenKai/LXGWWenKaiTC-Bold.ttf") format("truetype");
-  font-weight: 700;
-  font-style: italic;
+    font-family: "LXGWWenKai";
+    src: url("/fonts/LXGWWenKai/LXGWWenKaiTC-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: italic;
 }
 
 @font-face {
-  font-family: "LXGWWenKai";
-  src: url("/fonts/LXGWWenKai/LXGWWenKaiTC-Light.ttf") format("truetype");
-  font-weight: 300;
-  font-style: normal;
+    font-family: "LXGWWenKai";
+    src: url("/fonts/LXGWWenKai/LXGWWenKaiTC-Light.ttf") format("truetype");
+    font-weight: 300;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: "LXGWWenKai";
-  src: url("/fonts/LXGWWenKai/LXGWWenKaiTC-Light.ttf") format("truetype");
-  font-weight: 300;
-  font-style: italic;
+    font-family: "LXGWWenKai";
+    src: url("/fonts/LXGWWenKai/LXGWWenKaiTC-Light.ttf") format("truetype");
+    font-weight: 300;
+    font-style: italic;
 }
 
 @font-face {
-  font-family: "LXGWWenKai";
-  src: url("/fonts/LXGWWenKai/LXGWWenKaiTC-Regular.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
+    font-family: "LXGWWenKai";
+    src: url("/fonts/LXGWWenKai/LXGWWenKaiTC-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: "LXGWWenKai";
-  src: url("/fonts/LXGWWenKai/LXGWWenKaiTC-Regular.ttf") format("truetype");
-  font-weight: 400;
-  font-style: italic;
+    font-family: "LXGWWenKai";
+    src: url("/fonts/LXGWWenKai/LXGWWenKaiTC-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: italic;
 }
 
 /*
   Chen Yu Luo Yan
 */
 @font-face {
-  font-family: "chenyuluoyan";
-  src: url("/fonts/chenyuluoyan/ChenYuluoyan-Thin.ttf") format("truetype");
+    font-family: "chenyuluoyan";
+    src: url("/fonts/chenyuluoyan/ChenYuluoyan-Thin.ttf") format("truetype");
 }

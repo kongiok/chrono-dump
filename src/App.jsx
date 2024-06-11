@@ -9,6 +9,9 @@ import Landing from './pages/Landing.page.mdx';
 import { Base as DocumentBase } from './components/templates/Base/Document.template';
 import { Base as AppBase } from './components/templates/Base/App.template';
 import { MdHome, MdOutlineTimelapse } from 'react-icons/md';
+import { Login } from './pages/Login.page.jsx';
+import { Dialog } from './components/sections/Dialog.section.jsx';
+
 
 const navItems = [
   {
@@ -45,6 +48,10 @@ const routes = [
       {
         path: 'timer',
         element: <Pomodoro />,
+      },
+      {
+        path: 'login',
+        element: <Login />,
       }
     ]
   }

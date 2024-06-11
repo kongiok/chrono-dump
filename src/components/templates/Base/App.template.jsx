@@ -6,7 +6,8 @@ import { NavItem } from "@/utils/types";
 
 const Panel = styled.div`
   width: 100%;
-  height: 100svh;
+  height: 100%;
+  max-height: 100svh;
   display: flex;
   flex-direction: row;
   justify-content: start;
@@ -16,13 +17,14 @@ const Panel = styled.div`
 
 const Main = styled.main`
   width: 85%;
-  height: 100svh;
+  height: 95svh;
   display: flex;
   flex-direction: column;
   background-color: #fff;
   margin: .5em;
   padding: 0.5em;
   border-radius: 1em;
+  overflow: auto;
   @media (min-width: 768px){
     width: 95%;
     padding: 1em;
