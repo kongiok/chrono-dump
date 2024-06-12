@@ -12,7 +12,10 @@ import {
   UnsortedList,
   InlineCode,
   Link,
-  BlockQuote
+  BlockQuote,
+  Table,
+  TableCell,
+  TableHeader,
 } from '../parts/Markdown.part';
 
 const DisplaySection = styled.main`
@@ -48,7 +51,11 @@ const Markdown = ({ children }) => {
     ul: UnsortedList,
     code: InlineCode,
     a: Link,
-    blockquote: BlockQuote
+    blockquote: BlockQuote,
+    table: Table,
+    th: TableHeader,
+    td: TableCell,
+
   })
   const RenderMDX = ({ children }) => (
     <MDXProvider components={renderComponents}>

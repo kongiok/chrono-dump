@@ -80,3 +80,30 @@ We gathered ideas from *Get Things Done*, *Pomodoro*, and *Time Blocking*, tryin
 - **Stores**: Zustand, React Query.
   - **\*.store.js**: Zustand store.
   - **\*.query.js**: React Query store.
+
+# Database Schema #
+
+## Users ##
+| Name | Format | Type | Description |
+| --- | --- | --- | --- |
+| id | uuid | string | - |
+| name | text | string | - |
+| email | text | string | - |
+| password | text | string | - |
+| phone | text | string | - |
+| create_at | timestamp with time zone | string | - |
+
+## Tasks ##
+
+| Name | Format | Type | Description |
+| --- | --- | --- | --- |
+| id | bigint | number | - |
+| user_id | uuid | string | - |
+| title | text | string | - |
+| description | text | string | - |
+| task_start | timestamp with time zone | string | - |
+| task_to | timestamp with time zone | string | - |
+| parent_task | bigint | number | - |
+| priority | smallint | number | - |
+| status | smallint | number | - |
+| time_spent | bigint | number | - |

@@ -1,5 +1,6 @@
-import axios from "axios";
+import { createClient } from "@supabase/supabase-js";
 
-export const backend = axios.create({
-  baseURL: import.meta.env.VITE_BACKEND_URL,
-})
+export const supabase = createClient(
+  import.meta.env.VITE_SUPABASE_URL,
+  import.meta.env.VITE_SUPABASE_KEY
+)

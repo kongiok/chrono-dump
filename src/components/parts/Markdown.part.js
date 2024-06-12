@@ -101,3 +101,27 @@ export const BlockQuote = styled.blockquote`
     font-family: "Iansui" ,"GenWanMin", serif;
   }
 `;
+
+export const Table = styled.table`
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1em 0;
+  font-family: "GenSekiGothic", sans-serif;
+  color: var(--color-neutral);
+`;
+
+export const TableHeader = styled.th`
+  padding: 0.5em;
+  border-bottom: 1px solid var(--color-neutral);
+  font-weight: 800;
+  text-align: left;
+`;
+
+export const TableCell = styled.td`
+  padding: 0.5em;
+  border-bottom: 1px solid var(--color-neutral);
+  text-align: left;
+  &:first-child {
+    border-right: 1px solid var(--color-neutral);
+  }
+`;
