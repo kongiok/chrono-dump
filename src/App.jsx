@@ -3,23 +3,10 @@ import './Globals.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import { Markdown } from './components/sections/Markdown.section';
-import { Base as DocumentBase } from '@/components/layouts/Document.layout';
+import { Base as DocumentBase } from '@/components/layouts/Document.layout.jsx';
+import { Base as AppBase } from '@/components/layouts/App.layout.jsx';
 import Landing from './pages/Landing.page.mdx';
-import { MdHome, MdOutlineTimelapse } from 'react-icons/md';
 
-
-const navItems = [
-  {
-    href: "/app",
-    title: "Home",
-    icon: <MdHome />,
-  },
-  {
-    href: "/app/timer",
-    title: "Pomodoro",
-    icon: <MdOutlineTimelapse />,
-  }
-];
 
 const routes = [
   {
@@ -32,6 +19,12 @@ const routes = [
       }
     ],
   },
+  {
+    path: "/app",
+    element: <AppBase />,
+    children: [
+    ]
+  }
 ];
 
 const router = createBrowserRouter(routes);

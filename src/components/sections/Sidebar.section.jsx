@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
-import { MdHome } from "react-icons/md";
-import { NavItem } from "@/utils/types";
+import { MdHome, MdOutlineTimelapse, MdOutlineSettings } from "react-icons/md";
+import { NavItem } from "@/assets/types";
 
 const SidebarPanel = styled.aside`
   display: flex;
@@ -46,6 +46,17 @@ const NavSection = styled.nav`
   align-items: center;
 `;
 
+const SettingSection = styled.nav`
+  // Justify to the end of the sidebar
+  display: flex;
+  width: 100%;
+  margin-bottom: 2em;
+  flex-basis: 100%;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+`;
+
 const NavTitle = styled.h2`
   font-size: 1.15em;
   font-weight: 700;
@@ -83,10 +94,15 @@ const Sidebar = ({ navItem }) => {
     <SidebarPanel>
       <NavTitle>App</NavTitle>
       <NavSection>
-        <NavLink to="/app" title="Home"><span><MdHome /></span><p>Home</p></NavLink>
+        <NavLink to="/app" title="Home">
+          <span><MdHome /></span><p>Home</p>
+        </NavLink>
+        <NavLink to="/app/timer" title="Timer">
+          <span><MdOutlineTimelapse /></span><p>Timer</p>
+        </NavLink>
       </NavSection>
-      <NavTitle>Functions</NavTitle>
       <NavSection>
+        {navItem && <NavTitle>Functions</NavTitle>}
         {navItem?.map((item, index) => (
           <NavLink
             key={index}
@@ -96,6 +112,11 @@ const Sidebar = ({ navItem }) => {
             <span>{item.icon}</span><p>{item.title}</p>
           </NavLink>))}
       </NavSection>
+      <SettingSection>
+        <NavLink to="/app/settings" title="Settings">
+          <span><MdOutlineSettings /></span><p>Settings</p>
+        </NavLink>
+      </SettingSection>
     </SidebarPanel>
   )
 }

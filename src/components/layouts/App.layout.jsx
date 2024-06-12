@@ -2,7 +2,7 @@ import { Outlet } from "react-router-dom";
 import { Sidebar } from "@/components/sections/Sidebar.section.jsx";
 import styled from "styled-components";
 import PropTypes from "prop-types";
-import { NavItem } from "@/utils/types";
+import { NavItem } from "@/assets/types";
 
 const Panel = styled.div`
   width: 100%;
