@@ -2,8 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import { Helmet } from 'react-helmet'
-import { TanStackRouterDevtools } from '@tanstack/router-devtools'
-
+import 'normalize.css/normalize.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

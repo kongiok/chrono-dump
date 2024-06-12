@@ -6,7 +6,7 @@
     --color-tertiary: #F25F29;
     --color-tertiary-bg: #ffffff;
     --color-neutral: #3D3D3D;
-    --color-neutral-bg: #f9f9f9;
+    --color-neutral-bg: #FFFAFA;
     --color-accent: #BF343F;
     --color-accent-bg: #ffffff;
     --color-success: #406A4A;
@@ -15,12 +15,10 @@
     --color-warning-bg: #ffffff;
     --color-error: #A6411C;
     --color-error-bg: #ffffff;
+    --color-code-bg: #F2F2F2;
+    --color-code: #3D3D3D;
 }
 
-html {
-    margin: 0;
-    padding: 0;
-}
 
 /* Fira Code */
 @font-face {

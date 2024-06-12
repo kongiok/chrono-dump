@@ -3,14 +3,9 @@ import './Globals.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import { Markdown } from './components/sections/Markdown.section';
-import { Task } from "@/pages/Tasks/Tasks.dash.jsx";
-import { Pomodoro } from '@/pages/Pomodoro.dash';
+import { Base as DocumentBase } from '@/components/layouts/Document.layout';
 import Landing from './pages/Landing.page.mdx';
-import { Base as DocumentBase } from './components/templates/Base/Document.template';
-import { Base as AppBase } from './components/templates/Base/App.template';
 import { MdHome, MdOutlineTimelapse } from 'react-icons/md';
-import { Login } from './pages/Login.page.jsx';
-import { Dialog } from './components/sections/Dialog.section.jsx';
 
 
 const navItems = [
@@ -37,24 +32,6 @@ const routes = [
       }
     ],
   },
-  {
-    path: 'app',
-    element: <AppBase navItem={navItems} />,
-    children: [
-      {
-        path: '',
-        element: <Task />,
-      },
-      {
-        path: 'timer',
-        element: <Pomodoro />,
-      },
-      {
-        path: 'login',
-        element: <Login />,
-      }
-    ]
-  }
 ];
 
 const router = createBrowserRouter(routes);

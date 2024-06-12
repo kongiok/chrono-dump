@@ -1,27 +1,57 @@
-import { MDXProvider } from '@mdx-js/react';
+import { MDXProvider, useMDXComponents } from '@mdx-js/react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import {
+  Heading1,
+  Heading2,
+  Heading3,
+  Paragraph,
+  CodeBlock,
+  Emphasis,
+  Strong,
+  UnsortedList,
+  InlineCode,
+  Link,
+  BlockQuote
+} from '../parts/Markdown.part';
 
 const DisplaySection = styled.main`
   max-width: 100vw;
-  min-height: 100vh;
+  min-height: 100dvh;
   width: 100%;
   height: 100%;
-  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: var(--color-neutral-bg);
 `;
 
 const DocumentSection = styled.div`
-  padding: 1em;
+  padding: 10em 1em;
   @media (min-width: 768px) {
-    padding: 2em 10em;
+    max-width: 65dvw;
+    padding: 10em 10em;
   }
 `;
 
+
 const Markdown = ({ children }) => {
 
+  const renderComponents = useMDXComponents({
+    h1: Heading1,
+    h2: Heading2,
+    h3: Heading3,
+    p: Paragraph,
+    pre: CodeBlock,
+    em: Emphasis,
+    strong: Strong,
+    ul: UnsortedList,
+    code: InlineCode,
+    a: Link,
+    blockquote: BlockQuote
+  })
   const RenderMDX = ({ children }) => (
-    <MDXProvider >
+    <MDXProvider components={renderComponents}>
       {children}
     </MDXProvider>
   )

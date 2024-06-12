@@ -5,7 +5,6 @@ description: A productivity app provides you time tracking, task management, and
 
 ---
 import { Hero } from "@/components/sections/Hero.section.jsx";
-import "@/components/parts/documents/Document.css";
 
 export const links = [
   {
@@ -22,12 +21,62 @@ export const links = [
 />
 
 
-# What is *{frontmatter.title}* ? #
+# What is {frontmatter.title} ? #
 
 A productivity app provides you time tracking, task management, and time management.
 Want to track your task? No problem. Want a Pomodoro? No problem.
 
-# Why *{frontmatter.title}*? #
+# Why {frontmatter.title} ? #
 We gathered ideas from *Get Things Done*, *Pomodoro*, and *Time Blocking*, trying to combine those methods into one app to prevent context switching and improve productivity.
 
 # Features #
+
+- Task Management
+  - Create, Edit, Delete, and Complete tasks
+- Pomodoro Timer
+  - Start, Pause, and Stop the timer
+
+
+# Page Structure #
+
+
+> / => Landing Page (This page)
+>
+> /app => App Page (All the services)
+>   - /app/?view=index => Allow user dump their task
+>   - /app/?view=calendar => Calendar view
+>
+> /app/timer => Timer Page (Pomodoro Timer)
+>   - /app/timer/?task=id => start timer within a task id
+
+# Tech Stack #
+
+- Frontend:
+  - Fundamental: React, MDX
+  - Styling: Styled Components
+  - State Management: Zustand, TanStack React Query
+  - Routing: React Router Dom
+  - API: Axios
+  - Package Manager: PNPM (Yet can be use NPM)
+  - Build Tool: Vite
+- Backend:
+  - Database: Supabase (Based on Postgres)
+  - Auth: Supabase Auth
+
+> **NOTE**: Vite provides path alias, so you can use `@` to import the file from the `src` folder.
+>
+> e.g.:
+`@/components/sections/Hero.section.jsx` stands for `src/components/sections/Hero.section.jsx`
+
+# Codebase #
+
+- **Assets**: Things can't be organized into most of the folders
+- **Components**: Based on Atomic Design, but somethings changes.
+  - **Parts**: `Atom` in Atomic Design.
+  - **Sections**: `Molecule` and `Organisms` in Atomic Design.
+  - **Layouts**: `Pages` in Atomic Design, Designing the layout of the page.
+- **Pages**: This shows routes in the app, not following Atomic Design.
+- **Services**: API calls, contact with other services.
+- **Stores**: Zustand, React Query.
+  - **\*.store.js**: Zustand store.
+  - **\*.query.js**: React Query store.

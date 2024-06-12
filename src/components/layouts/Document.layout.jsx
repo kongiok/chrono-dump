@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom";
-import Footer from "../../sections/Footer.section";
+import Footer from "@/components/sections/Footer.section";
 
 
 
@@ -11,6 +11,5 @@ const Base = () => {
     </>
   )
 }
-
 
 export { Base };
