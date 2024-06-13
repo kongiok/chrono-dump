@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
 export const Hero = (
   { title, subtitle, linkArray }
@@ -25,7 +26,15 @@ export const Hero = (
   </Background >
 );
 
-
+Hero.propTypes = {
+  title: PropTypes.string.isRequired,
+  subtitle: PropTypes.string,
+  linkArray: PropTypes.arrayOf(PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    href: PropTypes.string.isRequired,
+    description: PropTypes.string
+  }))
+};
 
 const Background = styled.section`
   width: auto;
