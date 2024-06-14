@@ -15,11 +15,11 @@ const CurrentTaskView = ({ view, tasks }) => {
 
 export const TaskDash = () => {
   const [searchParams, setSearchParams] = useSearchParams();
-  const view = searchParams.get("view") || "";
+  const view = searchParams.get("view") || "index";
   const tasks = useTasksStore((state) => state.tasks);
   return (
     <Container>
       <CurrentTaskView view={view} tasks={tasks} />
     </Container>
-  )
-}
+  );
+};
