@@ -1,21 +1,25 @@
-import { Container } from "@/components/parts/Container.part"
+import React, { useEffect } from 'react';
+import { Container } from "@/components/parts/Container.part";
 import { Timer } from "@/components/sections/Timer.section";
 import { usePomodoroStore } from "@/store/utils.store.js";
 import { useSearchParams } from "react-router-dom";
 
 const TimerPage = () => {
-  const { isRunning, currentTask, remainingTime, setTime, startPomodoro, pausePomodoro } = usePomodoroStore();
-  const [searchParams, setSearchParams] = useSearchParams();
+  const { isRunning, currentTask, remainingTime, setTime, startPomodoro, pausePomodoro, setCurrentTask } = usePomodoroStore();
+  const [searchParams] = useSearchParams();
   const id = searchParams.get("id") || "";
-  usePomodoroStore.subscribe(
-    (state) => {
-      console.log(state);
-    },
-    (state) => {
-      state.currentTask = id;
-      // We'll get the task name from the supabase.
-    }
-  );
+
+  useEffect(() => {
+    const fetchTaskName = async (taskId) => { return `Task #${taskId}`; };
+    const loadTask = async () => {
+      if (id) {
+        const taskName = await fetchTaskName(id);
+        setCurrentTask(taskName);
+      }
+    };
+    loadTask();
+  }, [id, setCurrentTask]);
+
   return (
     <Container>
       <Timer
@@ -27,7 +31,7 @@ const TimerPage = () => {
         setTime={setTime}
       />
     </Container>
-  )
-}
+  );
+};
 
-export { TimerPage as Timer }
+export { TimerPage as Timer };

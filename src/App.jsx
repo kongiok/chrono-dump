@@ -23,7 +23,7 @@ const routes = [
       { path: '', element: <TaskDash />, },
       { path: 'timer', element: <Timer />, },
       { path: 'settings', element: <Settings />, },
-      { path: 'login', element: <Settings />, }
+      { path: 'login', element: <Login />, }
     ]
   }
 ];
