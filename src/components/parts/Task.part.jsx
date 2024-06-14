@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { useNavigate } from 'react-router-dom';
 
 export const Task = ({
   id,
@@ -10,23 +11,32 @@ export const Task = ({
   startDate,
   dueDate,
   timeSpent
-}) => (
-  <TaskCard>
-    <TaskHeader>
-      <TaskTitle>{title}</TaskTitle>
-      <TaskStatus>Status: {status}</TaskStatus>
-    </TaskHeader>
-    <TaskBody>
-      <TaskDescription>{description}</TaskDescription>
-      <TaskDetails>
-        <TaskDetail><strong>Priority:</strong> {priority}</TaskDetail>
-        <TaskDetail><strong>Start Date:</strong> {startDate}</TaskDetail>
-        <TaskDetail><strong>Due Date:</strong> {dueDate}</TaskDetail>
-        <TaskDetail><strong>Time Spent:</strong> {timeSpent} hrs</TaskDetail>
-      </TaskDetails>
-    </TaskBody>
-  </TaskCard>
-);
+}) => {
+  const navigate = useNavigate();
+
+  const handleStartTimer = () => {
+    navigate(`/app/timer?id=${id}`);
+  };
+
+  return (
+    <TaskCard>
+      <TaskHeader>
+        <TaskTitle>{title}</TaskTitle>
+        <TaskStatus>Status: {status}</TaskStatus>
+      </TaskHeader>
+      <TaskBody>
+        <TaskDescription>{description}</TaskDescription>
+        <TaskDetails>
+          <TaskDetail><strong>Priority:</strong> {priority}</TaskDetail>
+          <TaskDetail><strong>Start Date:</strong> {startDate}</TaskDetail>
+          <TaskDetail><strong>Deadline:</strong> {dueDate}</TaskDetail>
+          <TaskDetail><strong>Time Spent:</strong> {timeSpent} hrs</TaskDetail>
+        </TaskDetails>
+        <StartTimerButton onClick={handleStartTimer}>Start Timer</StartTimerButton>
+      </TaskBody>
+    </TaskCard>
+  );
+};
 
 const TaskCard = styled.section`
   display: flex;
@@ -70,6 +80,19 @@ const TaskDetails = styled.div`
 
 const TaskDetail = styled.div`
   font-size: 0.9em;
+`;
+
+const StartTimerButton = styled.button`
+  margin-top: 16px;
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  &:hover {
+    background-color: #0056b3;
+  }
 `;
 
 Task.propTypes = {
