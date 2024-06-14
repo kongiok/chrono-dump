@@ -8,6 +8,7 @@ import { Base as AppBase } from '@/components/layouts/App.layout.jsx';
 import Landing from './pages/Landing.page.mdx';
 import { TaskDash } from '@/components/layouts/Tasks.layout.jsx';
 import { Settings } from './pages/Settings.page';
+import { Login } from './pages/Login.page';
 import { Timer } from './pages/Timer.page';
 import React from "react";
 
@@ -21,7 +22,8 @@ const routes = [
     children: [
       { path: '', element: <TaskDash />, },
       { path: 'timer', element: <Timer />, },
-      { path: 'settings', element: <Settings />, }
+      { path: 'settings', element: <Settings />, },
+      { path: 'login', element: <Settings />, }
     ]
   }
 ];
