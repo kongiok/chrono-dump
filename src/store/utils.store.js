@@ -10,11 +10,11 @@ export const useDialogStore = create((set) => ({
 
 export const usePomodoroStore = create((set) => ({
   isRunning: false,
-  isPaused: false,
-  isBreak: false,
   currentTask: null,
-  remainingTime: 25 * 60,
+  taskName: "",
+  baseTime: 25 * 60,
+  remainingTime: 0,
   setTime: (time) => set({ currentTime: time }),
-  startPomodoro: () => set({ isRunning: true, isPaused: false }),
+  startPomodoro: () => set({ isRunning: true }),
   pausePomodoro: () => set({ isRunning: false }),
 }))

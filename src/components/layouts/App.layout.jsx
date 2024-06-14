@@ -1,8 +1,25 @@
 import { Outlet } from "react-router-dom";
 import { Sidebar } from "@/components/sections/Sidebar.section.jsx";
 import styled from "styled-components";
-import PropTypes from "prop-types";
-import { NavItem } from "@/assets/types";
+import { useUserStore } from "../../store/user.store";
+import { Navigate } from "react-router-dom";
+
+const Base = () => {
+  const { isLogin } = useUserStore();
+
+  if (!isLogin) {
+    Navigate('/login');
+  }
+
+  return (
+    <Panel>
+      <Sidebar />
+      <Main>
+        <Outlet />
+      </Main>
+    </Panel>
+  )
+}
 
 const Panel = styled.div`
   width: 100%;
@@ -31,22 +48,5 @@ const Main = styled.main`
   }
   `;
 
-const Base = ({ navItem }) => {
-
-  return (
-    <Panel>
-      <Sidebar navItem={navItem} />
-      <Main>
-        <Outlet />
-      </Main>
-    </Panel>
-  )
-}
-
-Base.propTypes = {
-  navItem: PropTypes.arrayOf(PropTypes.shape({
-    NavItem
-  })).isRequired,
-};
 
 export { Base };

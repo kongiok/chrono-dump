@@ -19,23 +19,22 @@ import {
 } from '../parts/Markdown.part';
 
 const DisplaySection = styled.main`
-  max-width: 100vw;
+  max-width: 100dvw;
   min-height: 100dvh;
   width: 100%;
   height: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: var(--color-neutral-bg);
-`;
-
-const DocumentSection = styled.div`
   padding: 10em 1em;
   @media (min-width: 768px) {
     max-width: 65dvw;
     padding: 10em 10em;
   }
 `;
+
 
 
 const Markdown = ({ children }) => {
@@ -65,9 +64,7 @@ const Markdown = ({ children }) => {
 
   return (
     <DisplaySection>
-      <DocumentSection>
-        <RenderMDX>{children}</RenderMDX>
-      </DocumentSection>
+      <RenderMDX>{children}</RenderMDX>
     </DisplaySection>
   );
 };

@@ -96,6 +96,8 @@ export const BlockQuote = styled.blockquote`
   background-color: var(--color-neutral-bg);
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   border-radius: 0.25em;
+  overflow: auto;
+  max-width: 85%;
   & p {
     font-size: 1.1em;
     font-family: "Iansui" ,"GenWanMin", serif;

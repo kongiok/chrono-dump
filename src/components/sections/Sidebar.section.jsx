@@ -4,6 +4,37 @@ import PropTypes from "prop-types";
 import { MdHome, MdOutlineTimelapse, MdOutlineSettings } from "react-icons/md";
 import { NavItem } from "@/assets/types";
 
+
+const Sidebar = ({ navItem }) => (
+  <SidebarPanel>
+    <NavTitle>App</NavTitle>
+    <NavSection>
+      <NavLink to="/app" title="Home">
+        <span><MdHome /></span><p>Home</p>
+      </NavLink>
+      <NavLink to="/app/timer" title="Timer">
+        <span><MdOutlineTimelapse /></span><p>Timer</p>
+      </NavLink>
+    </NavSection>
+    <NavSection>
+      {navItem && <NavTitle>Functions</NavTitle>}
+      {navItem?.map((item, index) => (
+        <NavLink
+          key={index}
+          to={item.href}
+          title={item.title}
+        >
+          <span>{item.icon}</span><p>{item.title}</p>
+        </NavLink>))}
+    </NavSection>
+    <SettingSection>
+      <NavLink to="/app/settings" title="Settings">
+        <span><MdOutlineSettings /></span><p>Settings</p>
+      </NavLink>
+    </SettingSection>
+  </SidebarPanel>
+)
+
 const SidebarPanel = styled.aside`
   display: flex;
   flex-direction: column;
@@ -37,6 +68,7 @@ const SidebarPanel = styled.aside`
     }
   }
   `;
+
 const NavSection = styled.nav`
   display: flex;
   width: 100%;
@@ -79,6 +111,7 @@ const NavLink = styled(Link)`
   & > p {
     display: none;
     font-size: 0.7em;
+    font-family: "GenSekiGothic", sans-serif;
     margin: 0;
   }
   & > span {
@@ -89,42 +122,10 @@ const NavLink = styled(Link)`
   }
 `;
 
-const Sidebar = ({ navItem }) => {
-  return (
-    <SidebarPanel>
-      <NavTitle>App</NavTitle>
-      <NavSection>
-        <NavLink to="/app" title="Home">
-          <span><MdHome /></span><p>Home</p>
-        </NavLink>
-        <NavLink to="/app/timer" title="Timer">
-          <span><MdOutlineTimelapse /></span><p>Timer</p>
-        </NavLink>
-      </NavSection>
-      <NavSection>
-        {navItem && <NavTitle>Functions</NavTitle>}
-        {navItem?.map((item, index) => (
-          <NavLink
-            key={index}
-            to={item.href}
-            title={item.title}
-          >
-            <span>{item.icon}</span><p>{item.title}</p>
-          </NavLink>))}
-      </NavSection>
-      <SettingSection>
-        <NavLink to="/app/settings" title="Settings">
-          <span><MdOutlineSettings /></span><p>Settings</p>
-        </NavLink>
-      </SettingSection>
-    </SidebarPanel>
-  )
-}
-
 Sidebar.propTypes = {
   navItem: PropTypes.arrayOf(
     NavItem
-  ).isRequired,
+  )
 };
 
 export { Sidebar };
