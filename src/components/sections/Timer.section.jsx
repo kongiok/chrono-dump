@@ -25,7 +25,7 @@ const Timer = ({ title, id, isRunning, startPomodoro, pausePomodoro, setTime, re
         return;
       }
       setTime(remainingTime - 1);
-    }, 10);
+    }, 1000);
     return () => clearInterval(interval);
   });
 
