@@ -17,8 +17,12 @@
     --color-error-bg: #ffffff;
     --color-code-bg: #F2F2F2;
     --color-code: #3D3D3D;
+
 }
 
+html:has(a, label, button, input, select, textarea) {
+    font-family: "GenSekiGothic", sans-serif;
+}
 
 /* Fira Code */
 @font-face {

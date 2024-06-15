@@ -1,20 +1,16 @@
 import { create } from "zustand";
-import { signInWithPassword } from "@/services/user.service.js";
 
 export const useUserStore = create((set) => ({
-  id: null,
-  name: null,
-  email: null,
-  token: null,
-  role: null,
+  id: 'ffa8c701-2ce3-43f4-8925-58471892cd44',
+  name: '',
+  email: '',
+  role: '',
+  token: '',
   isLogin: false,
   setToken: (token) => set({ token }),
-  login: async (email, password) => {
-    const { data, error } = await signInWithPassword(email, password);
-    if (error) {
-      return { error };
-    }
-    set({ id: data.user.id, email: data.user.email, role: data.user.role });
-    return { data };
-  }
+  setName: (name) => set((state) => ({ user: { ...state.user, name } })),
+  setEmail: (email) => set((state) => ({ user: { ...state.user, email } })),
+  setRole: (role) => set((state) => ({ user: { ...state.user, role } })),
+  setLogin: (isLogin) => set({ isLogin }),
+  setId: (id) => set({ id })
 }));

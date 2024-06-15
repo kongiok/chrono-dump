@@ -1,25 +1,38 @@
 import { useSearchParams } from "react-router-dom";
-import { useTasksStore } from "../../store/tasks.store";
-import { IndexPage } from "../sections/Tasks/Index.section";
 import { Container } from "../parts/Container.part";
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+import { IndexPage } from "@/pages/Tasks/Index.section.jsx";
+import PropTypes from "prop-types";
 
-const CurrentTaskView = ({ view, tasks }) => {
+const CurrentTaskView = ({ view }) => {
   switch (view.toLowerCase()) {
     case "calendar":
       return <h1>Calendar View</h1>
     case "index":
     default:
-      return <IndexPage tasks={tasks} />
+      return <IndexPage />
   }
 }
 
+CurrentTaskView.propTypes = {
+  view: PropTypes.string.isRequired,
+  tasks: PropTypes.array,
+}
+
 export const TaskDash = () => {
-  const [searchParams, setSearchParams] = useSearchParams();
+  const isLogin = localStorage.getItem("isLogin") === "true";
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (!isLogin) {
+      navigate("/app/login");
+    }
+  });
+  const [searchParams] = useSearchParams();
   const view = searchParams.get("view") || "index";
-  const tasks = useTasksStore((state) => state.tasks);
   return (
     <Container>
-      <CurrentTaskView view={view} tasks={tasks} />
+      <CurrentTaskView view={view} />
     </Container>
   );
 };

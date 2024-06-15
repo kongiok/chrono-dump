@@ -15,7 +15,8 @@ export const Task = ({
   const navigate = useNavigate();
 
   const handleStartTimer = () => {
-    navigate(`/app/timer?id=${id}`);
+    navigate(`/app/timer?id=${id}`, { replace: false });
+    localStorage.setItem('currentTask', id);
   };
 
   return (
@@ -27,8 +28,6 @@ export const Task = ({
       <TaskBody>
         <TaskDescription>{description}</TaskDescription>
         <TaskDetails>
-          <TaskDetail><strong>Priority:</strong> {priority}</TaskDetail>
-          <TaskDetail><strong>Start Date:</strong> {startDate}</TaskDetail>
           <TaskDetail><strong>Deadline:</strong> {dueDate}</TaskDetail>
           <TaskDetail><strong>Time Spent:</strong> {timeSpent} hrs</TaskDetail>
         </TaskDetails>

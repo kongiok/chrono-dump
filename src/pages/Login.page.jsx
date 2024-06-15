@@ -2,19 +2,27 @@ import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import axios from "axios";
+import { signInWithPassword } from "../services/user.service.js";
+import { toast } from "react-toastify";
+
 
 export const Login = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
   const [loginError, setLoginError] = useState(null);
-  const navigate = useNavigate();
-
   const onSubmit = async (data) => {
-    try {
-      const response = await axios.post("/api/login", data);
-      if (response.data.success) { navigate("/app"); } 
-      else { setLoginError("Invalid email or password"); }
-    } catch (error) { setLoginError("An error occurred during login"); }
+    const { data: user, error } = await signInWithPassword(data.email, data.password);
+    if (error) {
+      console.error("Error signing in", error);
+      setLoginError(error.message);
+    }
+    localStorage.setItem('isLogin', true);
+    const removeQuotes = (str) => {
+      return str.replace(/^"(.*)"$/, '$1');
+    }
+    const idToStore = removeQuotes(user.user.id);
+    localStorage.setItem('user', idToStore);
+    console.log('User', user);
+    toast.success('Login successful\nPlease go to /app to see your tasks');
   };
 
   return (

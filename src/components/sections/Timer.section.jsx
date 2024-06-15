@@ -1,8 +1,34 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { useEffect } from 'react';
+import { updateTaskTime } from '@/services/tasks.service.js';
+import { toast } from 'react-toastify';
 
-const Timer = ({ title, isRunning, remainingTime, startPomodoro, pausePomodoro, setTime }) => {
+const Timer = ({ title, id, isRunning, startPomodoro, pausePomodoro, setTime, remainingTime }) => {
+  useEffect(() => {
+    let interval;
+    if (interval) {
+      clearInterval(interval);
+    }
+    if (!isRunning) {
+      return;
+    }
+    interval = setInterval(async () => {
+      if (remainingTime <= 0) {
+        pausePomodoro();
+        const { data, error } = await updateTaskTime(id, 1500 - remainingTime);
+        if (error) {
+          toast.error('Failed to update task time');
+        }
+        console.log(data);
+        return;
+      }
+      setTime(remainingTime - 1);
+    }, 10);
+    return () => clearInterval(interval);
+  });
+
   const formatTime = (timeInSeconds) => {
     const minutes = Math.floor(timeInSeconds / 60);
     const seconds = timeInSeconds % 60;
@@ -26,11 +52,12 @@ const Timer = ({ title, isRunning, remainingTime, startPomodoro, pausePomodoro, 
 
 Timer.propTypes = {
   title: PropTypes.string,
+  id: PropTypes.string.isRequired,
   isRunning: PropTypes.bool,
   remainingTime: PropTypes.number,
   startPomodoro: PropTypes.func,
   pausePomodoro: PropTypes.func,
-  setTime: PropTypes.func
+  setTime: PropTypes.func,
 };
 
 const TimerContainer = styled.div`

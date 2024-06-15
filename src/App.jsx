@@ -1,4 +1,5 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import './Globals.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
@@ -10,33 +11,37 @@ import { TaskDash } from '@/components/layouts/Tasks.layout.jsx';
 import { Settings } from './pages/Settings.page';
 import { Login } from './pages/Login.page';
 import { Timer } from './pages/Timer.page';
-import React from "react";
+import { Register } from './pages/Register.page';
 
 const routes = [
-  { path: "/", element: <DocumentBase />,
+  {
+    path: "/", element: <DocumentBase />,
     children: [
       { path: '', element: <Markdown><Landing /></Markdown>, }
     ],
   },
-  { path: "/app", element: <AppBase />,
+  {
+    path: "/app", element: <AppBase />,
     children: [
       { path: '', element: <TaskDash />, },
       { path: 'timer', element: <Timer />, },
       { path: 'settings', element: <Settings />, },
-      { path: 'login', element: <Login />, }
+      { path: 'login', element: <Login />, },
+      { path: 'Register', element: <Register />, }
     ]
   }
 ];
 
 const router = createBrowserRouter(routes);
+const queryClient = new QueryClient();
 
 function App() {
-  const queryClient = new QueryClient();
   return (
     <>
       <QueryClientProvider client={queryClient}>
         <RouterProvider router={router} />
       </QueryClientProvider>
+      <ReactQueryDevtools client={queryClient} />
       <ToastContainer />
     </>
   );

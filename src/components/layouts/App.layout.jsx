@@ -3,6 +3,7 @@ import { Sidebar } from "@/components/sections/Sidebar.section.jsx";
 import styled from "styled-components";
 import { useUserStore } from "../../store/user.store";
 import { Navigate } from "react-router-dom";
+import { createTasks, sampleTasks } from "../../services/tasks.service";
 
 const Base = () => {
   const { isLogin } = useUserStore();
@@ -17,6 +18,7 @@ const Base = () => {
       <Main>
         <Outlet />
       </Main>
+      <FAB onClick={() => { createTasks(sampleTasks) }}>+</FAB>
     </Panel>
   )
 }
@@ -47,6 +49,26 @@ const Main = styled.main`
     padding: 1em;
   }
   `;
+
+const FAB = styled.button`
+  position: fixed;
+  bottom: 5%;
+  right: 5%;
+  width: 3em;
+  height: 3em;
+  border-radius: 50%;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  &:hover {
+    background-color: #0056b3;
+  }
+`;
 
 
 export { Base };

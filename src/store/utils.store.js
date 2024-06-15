@@ -1,35 +1,36 @@
 import { create } from 'zustand';
-import { subscribeWithSelector } from 'zustand/middleware';
 
-export const usePomodoroStore = create(subscribeWithSelector((set, get) => ({
+export const usePomodoroStore = create((set) => ({
   isRunning: false,
+  status: '' | 'work' | 'shortBreak' | 'longBreak',
   currentTask: '',
   remainingTime: 1500,
-  intervalId: null,
-
-  setTime: (time) => set({ remainingTime: time }),
-
-  startPomodoro: () => {
-    set((state) => {
-      if (state.intervalId) {
-        clearInterval(state.intervalId);
-      }
-      const intervalId = setInterval(() => {
-        set((state) => {
-          if (state.remainingTime > 0) { return { remainingTime: state.remainingTime - 1 }; } 
-          else {
-            clearInterval(state.intervalId);
-            return { isRunning: false, intervalId: null };
-          }
-        });
-      }, 1000);
-      return { isRunning: true, intervalId };
-    });
-  },
-
-  pausePomodoro: () => set((state) => {
-    if (state.intervalId) { clearInterval(state.intervalId); }
-    return { isRunning: false, intervalId: null };
+  setTomodoroTime: (status) => set(() => {
+    const time = {
+      work: 1500,
+      shortBreak: 300,
+      longBreak: 900,
+    };
+    let remainingTime;
+    switch (status) {
+      case 'work':
+        remainingTime = time.work;
+        break;
+      case 'shortBreak':
+        remainingTime = time.shortBreak;
+        break;
+      case 'longBreak':
+        remainingTime = time.longBreak;
+        break;
+      default:
+        remainingTime = time.work;
+    }
+    return { remainingTime };
   }),
+
+  setIsRunning: (isRunning) => set({ isRunning }),
+  setTime: (time) => set({ remainingTime: time }),
   setCurrentTask: (task) => set({ currentTask: task }),
-})));
+  startPomodoro: () => set({ isRunning: true }),
+  pausePomodoro: () => set({ isRunning: false }),
+}));

@@ -1,29 +1,28 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { Container } from "@/components/parts/Container.part";
 import { Timer } from "@/components/sections/Timer.section";
 import { usePomodoroStore } from "@/store/utils.store.js";
 import { useSearchParams } from "react-router-dom";
+import { getTaskById } from '../services/tasks.service';
+import { useNavigate } from "react-router-dom";
 
 const TimerPage = () => {
   const { isRunning, currentTask, remainingTime, setTime, startPomodoro, pausePomodoro, setCurrentTask } = usePomodoroStore();
+  const navigate = useNavigate();
   const [searchParams] = useSearchParams();
-  const id = searchParams.get("id") || "";
+  const id = localStorage.getItem('currentTask') || searchParams.get('id');
 
   useEffect(() => {
-    const fetchTaskName = async (taskId) => { return `Task #${taskId}`; };
-    const loadTask = async () => {
-      if (id) {
-        const taskName = await fetchTaskName(id);
-        setCurrentTask(taskName);
-      }
-    };
-    loadTask();
+    console.log('param', id);
+    const currentTask = getTaskById(id);
+    setCurrentTask(currentTask.title);
   }, [id, setCurrentTask]);
 
   return (
     <Container>
       <Timer
         title={currentTask}
+        id={id}
         isRunning={isRunning}
         remainingTime={remainingTime}
         startPomodoro={startPomodoro}
